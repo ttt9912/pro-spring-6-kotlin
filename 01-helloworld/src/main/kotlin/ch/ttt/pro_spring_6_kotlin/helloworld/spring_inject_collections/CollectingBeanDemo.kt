@@ -2,6 +2,7 @@ package ch.ttt.pro_spring_6_kotlin.helloworld.spring_inject_collections
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Component
 
@@ -17,7 +18,8 @@ internal class CollectingBeanDemo {
     var songsWrong: List<Song>? = null
 
     @Autowired
-    @Qualifier("songList")
+    // @Qualifier("songList") // --> alternative
+    @Value("#{collectionsConfig.songList}")
     var songsCorrect: List<Song>? = null
 
     companion object {
