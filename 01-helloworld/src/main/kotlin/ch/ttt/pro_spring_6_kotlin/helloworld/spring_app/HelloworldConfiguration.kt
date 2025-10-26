@@ -13,7 +13,7 @@ open class HelloworldConfiguration {
 
     @Bean
     open fun renderer(): MessageRenderer{
-        val renderer: MessageRenderer = StandardOutMessageRenderer()
+        val renderer: MessageRenderer = StandardOutMessageRendererImpl()
         renderer.messageProvider = provider()
         return renderer
     }
