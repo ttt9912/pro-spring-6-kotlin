@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component
 
 /**
  * Constructor injection
+ * - avoids creation of the bean without its dependencies
+ * - @Autowired is optional here
  *
  * Setter injection works by just annotating the setter:
- *
  * <pre>
  *     override var messageProvider: MessageProvider? = null
  *         @Autowired set(value) {
